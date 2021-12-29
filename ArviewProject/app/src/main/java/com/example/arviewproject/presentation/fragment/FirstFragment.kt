@@ -54,7 +54,11 @@ class FirstFragment : DaggerFragment() {
         )[FirstFragmentViewModel::class.java]
 
 
+        binding.reviewButton.setOnClickListener{
+            val bottomSheetFragment = BottomSheetFragment()
 
+            bottomSheetFragment.show(requireActivity().supportFragmentManager, "tag")
+        }
 
 
         return root

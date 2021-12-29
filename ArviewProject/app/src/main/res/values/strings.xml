@@ -9,4 +9,5 @@
     <string name="numberOfBroadcasts">трансляций</string>
     <string name="internetConnectTrue">Интернет соединение есть.</string>
     <string name="internetConnectFalse">Интернет соединения нет.</string>
+    <string name="BottomSheetText">Понравилось приложение? Оставь отзыв!</string>
 </resources>
