@@ -1,4 +1,4 @@
-package com.example.arviewproject.navigator
+package com.example.arviewproject.app.navigator
 
 import androidx.fragment.app.Fragment
 

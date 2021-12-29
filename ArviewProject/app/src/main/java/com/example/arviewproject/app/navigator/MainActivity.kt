@@ -1,10 +1,10 @@
-package com.example.arviewproject.navigator
+package com.example.arviewproject.app.navigator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.example.arviewproject.R
-import com.example.arviewproject.fragment.FirstFragment
+import com.example.arviewproject.presentation.fragment.FirstFragment
 
 class MainActivity : AppCompatActivity(), Navigator {
     override fun onCreate(savedInstanceState: Bundle?) {

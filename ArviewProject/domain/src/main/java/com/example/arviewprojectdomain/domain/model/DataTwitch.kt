@@ -1,4 +1,4 @@
-package com.example.arviewproject.data
+package com.example.arviewprojectdomain.domain.model
 
 data class DataTwitch (
     val id:Int,

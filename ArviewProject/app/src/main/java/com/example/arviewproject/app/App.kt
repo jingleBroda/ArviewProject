@@ -1,25 +1,21 @@
-package com.example.arviewproject
+package com.example.arviewproject.app
 
-import android.app.Application
-import com.example.arviewproject.data.RetrofiteService
-import okhttp3.*
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
-import okhttp3.Interceptor
-
-import okhttp3.OkHttpClient
-import java.io.IOException
+import com.example.arviewproject.app.di.DaggerAppComponent
+import dagger.android.AndroidInjector
+import dagger.android.DaggerApplication
 
 
-class App:Application() {
+class App:DaggerApplication() {
+    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
+       return DaggerAppComponent.builder().bindContext(this).build()
+    }
 
-    private val baseUrl = "https://api.twitch.tv/kraken/"
+}
 
-    private val BEARER_TOKEN = "7hq7mo22fniilrcud3dwml32mxchj9"
-    private val CLIENT_ID = "ahuoi1tl0qmqbyi8jo8nitbmuaad7w"
+/*
+ private val baseUrl = "https://api.twitch.tv/kraken/"
 
-    private var retroService:RetrofiteService
+    private var retroService: RetrofiteService
     private var okHttpClient: OkHttpClient = OkHttpClient()
 
     init{
@@ -46,8 +42,8 @@ class App:Application() {
                 val originalRequest: Request = chain.request()
 
                 val builder: Request.Builder = originalRequest.newBuilder()
-                    .header("Authorization", BEARER_TOKEN)
-                    .header("Client-Id", CLIENT_ID)
+                    .header("Authorization", RetrofirtParam.BEARER_TOKEN)
+                    .header("Client-Id", RetrofirtParam.CLIENT_ID)
 
                 val newRequest: Request = builder.build()
 
@@ -59,8 +55,8 @@ class App:Application() {
     }
 
 
-    fun getRetrofiteService():RetrofiteService{
+    fun getRetrofitService(): RetrofiteService {
         return retroService
     }
 
-}
+ */

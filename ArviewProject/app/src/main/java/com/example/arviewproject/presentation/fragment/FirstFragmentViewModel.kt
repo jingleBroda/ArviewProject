@@ -1,26 +1,19 @@
-package com.example.arviewproject.fragment
+package com.example.arviewproject.presentation.fragment
 
-import android.app.Application
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
-import com.example.arviewproject.App
+import com.example.arviewprojectdomain.domain.usecase.MakeApiUseCase
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import javax.inject.Inject
 
-class FirstFragmentViewModel(application: Application):AndroidViewModel(application) {
+class FirstFragmentViewModel @Inject constructor(val makeApiUseCase: MakeApiUseCase):ViewModel() {
 
-    private val retrofiteServise = (application as App).getRetrofiteService()
     private val compositeDisposable : CompositeDisposable = CompositeDisposable()
-   // private val bearerToken = "7hq7mo22fniilrcud3dwml32mxchj9"
-   // private val clientId = "ahuoi1tl0qmqbyi8jo8nitbmuaad7w"
 
     fun makeAPI(){
-        val zapros1 = retrofiteServise.getTopGames(
-            1,
-            1
-        )
+        val zaprosMakeApi = makeApiUseCase.doIt()
             .subscribeOn(Schedulers.single())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
@@ -29,8 +22,12 @@ class FirstFragmentViewModel(application: Application):AndroidViewModel(applicat
                 Log.d("APIzaprTroble", it.toString())
             })
 
-        compositeDisposable.add(zapros1)
+        compositeDisposable.add(zaprosMakeApi)
 
+    }
+
+    fun cleareDisposable(){
+        compositeDisposable.clear()
     }
 
 }
