@@ -1,6 +1,9 @@
 package com.example.arviewprojectdomain.domain.model
 
+import com.example.arviewprojectdomain.domain.model.componentModelRetrofit.DataTwitch
+import com.example.arviewprojectdomain.domain.model.componentModelRetrofit.PaginationTwitch
+
 data class ModelRetrofit(
-    val data:ArrayList<DataTwitch>,
-    val pagination: PaginationTwitch
+    var data:ArrayList<DataTwitch>,
+    var pagination: PaginationTwitch
 )

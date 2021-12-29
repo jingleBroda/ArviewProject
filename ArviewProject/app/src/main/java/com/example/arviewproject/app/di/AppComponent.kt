@@ -1,10 +1,7 @@
 package com.example.arviewproject.app.di
 
 import com.example.arviewproject.app.App
-import com.example.arviewproject.app.di.module.FragmentModule
-import com.example.arviewproject.app.di.module.RepositoryModule
-import com.example.arviewproject.app.di.module.RetrofitModule
-import com.example.arviewproject.app.di.module.ViewModelModule
+import com.example.arviewproject.app.di.module.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -18,7 +15,8 @@ import javax.inject.Singleton
     RetrofitModule::class,
     RepositoryModule::class,
     ViewModelModule::class,
-    FragmentModule::class
+    FragmentModule::class,
+    RoomModule::class
 ])
 
 @Singleton

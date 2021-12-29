@@ -9,8 +9,12 @@ interface RetrofitService {
     @GET("https://api.twitch.tv/helix/games/top")
     fun getTopGameStartAPI(
         @Query("first") first: Int,
-       // @Query("limit") limit: Int,
-       // @Query("offset") offset: Int
+    ): Single<ModelRetrofit>
+
+    @GET("https://api.twitch.tv/helix/games/top")
+    fun getNewListTopGame(
+        @Query("after") pagination: String,
+        @Query("first") first: Int,
     ): Single<ModelRetrofit>
 
 }

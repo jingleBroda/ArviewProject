@@ -1,4 +1,4 @@
-package com.example.arviewprojectdomain.domain.model
+package com.example.arviewprojectdomain.domain.model.componentModelRetrofit
 
 data class DataTwitch (
     val id:Int,

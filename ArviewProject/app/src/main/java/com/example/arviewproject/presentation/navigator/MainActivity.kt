@@ -1,10 +1,13 @@
-package com.example.arviewproject.app.navigator
+package com.example.arviewproject.presentation.navigator
 
+import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.example.arviewproject.R
 import com.example.arviewproject.presentation.fragment.FirstFragment
+import java.io.IOException
 
 class MainActivity : AppCompatActivity(), Navigator {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,4 +35,5 @@ class MainActivity : AppCompatActivity(), Navigator {
             .show(f)
             .commit()
     }
+
 }
